@@ -1,28 +1,124 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIRACLE</title>
     <style>
-    body {
+        @font-face {
+            font-family: 'GmarketSansMedium';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        body {
             margin: 0px;
             padding: 0px;
             position: relative;
-            background-color:#ffffff;
+            background-color: #ffffff;
         }
 
-        img {
-            width: 100%;
-            vertical-align: top;
-        }
-       
+        @media (max-width: 600px) {
+            #mobile {
+                display: block;
+            }
 
-    
- </style>
-  </head>
-  <body>
-    <a href="http://pf.kakao.com/_WHMYxj/chat" target="blank">
-    <div class="main">
-   <img src="main1.png">
-   </div>
-   </a>
-  </body>
+            #main {
+                display: none;
+            }
+
+            img {
+                width: 100%;
+                z-index: 1;
+                vertical-align: top;
+                position: absolute;
+            }
+
+            div {
+                width: 160px;
+                height: 5%;
+                font-size: 120%;
+                font-family: 'GmarketSansMedium';
+                src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+                font-weight: bold;
+                font-style: normal;
+                text-align: left;
+            }
+            #padd {
+                padding-top: 129%;
+                text-align: center;
+                margin: 0 auto;
+                position: absolute;
+                z-index: 7;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        @media (min-width: 600px) {
+            #mobile {
+                display: none;
+            }
+
+            #main {
+                display: block;
+            }
+
+            img {
+                height: 100%;
+                top: 0;
+                left: 50%;
+                position: fixed;
+                transform: translateX(-50%);
+                z-index: 1;
+                vertical-align: top;
+            }
+
+            div {
+                position: fixed;
+                top: 63.5%;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 300px;
+                height: 5%;
+                z-index: 6;
+                font-size: 35px;
+                font-family: 'GmarketSansMedium';
+                src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+                font-weight: 700;
+                font-style: normal;
+            }
+        }
+
+        .text::after {
+            content: '';
+            margin-left: .4rem;
+            animation: cursor .9s infinite steps(2);
+        }
+
+        @keyframes cursor {
+            from {
+                border-right: 2px solid #222;
+            }
+
+            to {
+                opacity: 0;
+            }
+        }
+    </style>
+    <script src="text.js">
+    </script>
+</head>
+
+<body>
+    <img src="img/main.png" id="main">
+    <img src="img/mobile.png" id="mobile">
+    <div id="padd">
+        <div class="text">
+        </div>
+    </div>
+</body>
+
 </html>
